@@ -21,8 +21,8 @@ if __name__ == '__main__':
 	hitnet_depth = HitNet(model_path, model_type)
 
 	# Load images
-	left_img = imread_from_url("https://vision.middlebury.edu/stereo/data/scenes2003/newdata/cones/im2.png")
-	right_img = imread_from_url("https://vision.middlebury.edu/stereo/data/scenes2003/newdata/cones/im6.png")
+	left_img = imread_from_url("https://vision.middlebury.edu/stereo/data/scenes2014/datasets/Bicycle1-imperfect/im0.png")
+	right_img = imread_from_url("https://vision.middlebury.edu/stereo/data/scenes2014/datasets/Bicycle1-imperfect/im1.png")
 
 	# Estimate the depth
 	disparity_map = hitnet_depth(left_img, right_img)
@@ -32,7 +32,7 @@ if __name__ == '__main__':
 
 	cobined_image = np.hstack((left_img, right_img, color_disparity))
 
-	cv2.imwrite("output_2.jpg", cobined_image)
+	cv2.imwrite("output1.jpg", cobined_image)
 
 	# cv2.namedWindow("Estimated disparity", cv2.WINDOW_NORMAL)	
 	# cv2.imshow("Estimated disparity", cobined_image)
