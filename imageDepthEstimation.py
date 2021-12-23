@@ -1,8 +1,10 @@
 import cv2
+from time import time
 from hitnet import HitNet, ModelType, draw_disparity, draw_depth, CameraConfig, load_img
 import numpy as np
 from imread_from_url import imread_from_url
 
+start = time()
 if __name__ == '__main__':
 		
 	# Select model type
@@ -39,3 +41,5 @@ if __name__ == '__main__':
 	# cv2.waitKey(0)
 
 	# cv2.destroyAllWindows()
+	
+print(f'Time taken to run: {time() - start} seconds')
