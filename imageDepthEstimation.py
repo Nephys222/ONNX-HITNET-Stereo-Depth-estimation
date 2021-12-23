@@ -6,9 +6,9 @@ from imread_from_url import imread_from_url
 if __name__ == '__main__':
 		
 	# Select model type
-	# model_type = ModelType.middlebury
+	model_type = ModelType.middlebury
 	# model_type = ModelType.flyingthings
-	model_type = ModelType.eth3d
+	# model_type = ModelType.eth3d
 
 	if model_type == ModelType.middlebury:
 		model_path = "models/middlebury_d400/saved_model_480x640/model_float32.onnx"
