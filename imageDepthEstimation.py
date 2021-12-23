@@ -4,9 +4,9 @@ from hitnet import HitNet, ModelType, draw_disparity, draw_depth, CameraConfig, 
 import numpy as np
 from imread_from_url import imread_from_url
 
-start = time()
 if __name__ == '__main__':
-		
+
+	start = time()	
 	# Select model type
 	model_type = ModelType.middlebury
 	# model_type = ModelType.flyingthings
@@ -36,10 +36,9 @@ if __name__ == '__main__':
 
 	cv2.imwrite("output1.jpg", cobined_image)
 
+	print(f'Time taken to run: {time() - start} seconds')
 	# cv2.namedWindow("Estimated disparity", cv2.WINDOW_NORMAL)	
 	# cv2.imshow("Estimated disparity", cobined_image)
 	# cv2.waitKey(0)
 
 	# cv2.destroyAllWindows()
-	
-print(f'Time taken to run: {time() - start} seconds')
