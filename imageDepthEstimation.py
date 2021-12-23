@@ -5,8 +5,7 @@ import numpy as np
 from imread_from_url import imread_from_url
 
 if __name__ == '__main__':
-
-	start = time()	
+	
 	# Select model type
 	model_type = ModelType.middlebury
 	# model_type = ModelType.flyingthings
@@ -27,6 +26,7 @@ if __name__ == '__main__':
 	right_img = imread_from_url("https://vision.middlebury.edu/stereo/data/scenes2014/datasets/Bicycle1-imperfect/im1.png")
 
 	# Estimate the depth
+	start = time()
 	disparity_map = hitnet_depth(left_img, right_img)
 
 	color_disparity = draw_disparity(disparity_map)
