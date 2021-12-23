@@ -32,10 +32,10 @@ if __name__ == '__main__':
 
 	cobined_image = np.hstack((left_img, right_img, color_disparity))
 
-	cv2.imwrite("out.jpg", cobined_image)
+	cv2.imwrite("output_2.jpg", cobined_image)
 
-	cv2.namedWindow("Estimated disparity", cv2.WINDOW_NORMAL)	
-	cv2.imshow("Estimated disparity", cobined_image)
-	cv2.waitKey(0)
+	# cv2.namedWindow("Estimated disparity", cv2.WINDOW_NORMAL)	
+	# cv2.imshow("Estimated disparity", cobined_image)
+	# cv2.waitKey(0)
 
-	cv2.destroyAllWindows()
+	# cv2.destroyAllWindows()
