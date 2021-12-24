@@ -25,18 +25,20 @@ if __name__ == '__main__':
 	left_img = imread_from_url("https://vision.middlebury.edu/stereo/data/scenes2014/datasets/Bicycle1-imperfect/im0.png")
 	right_img = imread_from_url("https://vision.middlebury.edu/stereo/data/scenes2014/datasets/Bicycle1-imperfect/im1.png")
 
-	# Estimate the depth
-	start = time()
-	disparity_map = hitnet_depth(left_img, right_img)
+	
+	for i in range(7):
+		# Estimate the depth
+		start = time()
+		disparity_map = hitnet_depth(left_img, right_img)
 
-	color_disparity = draw_disparity(disparity_map)
-	color_disparity = cv2.resize(color_disparity, (left_img.shape[1],left_img.shape[0]))
+		color_disparity = draw_disparity(disparity_map)
+		color_disparity = cv2.resize(color_disparity, (left_img.shape[1],left_img.shape[0]))
 
-	cobined_image = np.hstack((left_img, right_img, color_disparity))
+		cobined_image = np.hstack((left_img, right_img, color_disparity))
 
-	cv2.imwrite("output1.jpg", cobined_image)
+		cv2.imwrite(f"output {i}.jpg", cobined_image)
 
-	print(f'Time taken to run: {time() - start} seconds')
+		print(f'Time taken to run: {i}: {time() - start} seconds')
 	# cv2.namedWindow("Estimated disparity", cv2.WINDOW_NORMAL)	
 	# cv2.imshow("Estimated disparity", cobined_image)
 	# cv2.waitKey(0)
