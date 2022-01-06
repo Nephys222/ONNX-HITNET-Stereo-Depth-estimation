@@ -32,12 +32,12 @@ if __name__ == '__main__':
 
 	color_disparity = draw_disparity(disparity_map)
 	color_disparity = cv2.resize(color_disparity, (left_img.shape[1],left_img.shape[0]))
+	print(f'Time taken to run: {time() - start} seconds')
 
 	cobined_image = np.hstack((left_img, right_img, color_disparity))
 
-	cv2.imwrite("output-3.jpg", cobined_image)
+	cv2.imwrite("output-4.jpg", cobined_image)
 
-	print(f'Time taken to run: {time() - start} seconds')
 	# cv2.namedWindow("Estimated disparity", cv2.WINDOW_NORMAL)	
 	# cv2.imshow("Estimated disparity", cobined_image)
 	# cv2.waitKey(0)
